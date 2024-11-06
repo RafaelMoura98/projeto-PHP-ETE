@@ -68,7 +68,7 @@ function reduzirStr($str,$quantidade){
     if($str && $tamanho >= $quantidade){
       return substr($str,0,$quantidade)." [...]";
     }else{
-      return substr($str,0,$tamanho)." [...]";
+      return $str;
     }
   }
 
@@ -178,17 +178,18 @@ function reduzirStr($str,$quantidade){
         return $list;
     }
     
-    function cadastrarNoticia($titulo,$img,$descricao)
+    function cadastrarNoticia($titulo,$imagem,$descricao,$categoria)
     {
-        if(!$titulo ||!$img || !$descricao){return;}
-        $sql = "INSERT INTO `noticia_tb` (`titulo`,`img`,`descricao`)
-        VALUES(:titulo,:img,:descricao)";
+        if(!$titulo ||!$imagem || !$descricao || !$categoria){return;}
+        $sql = "INSERT INTO `noticias_tb` (`titulo`,`imagem`,`descricao`,`categoria`)
+        VALUES(:titulo,:imagem,:descricao,:categoria)";
 
 $pdo = Database::conexao();
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':titulo', $titulo);
-$stmt->bindParam(':img', $img);
+$stmt->bindParam(':imagem', $imagem);
 $stmt->bindParam(':descricao', $descricao);
+$stmt->bindParam(':categoria', $categoria);
 $result = $stmt->execute();
 return ($result)?true:false;
 }
@@ -207,10 +208,10 @@ function validaSenha($senhaDigitada, $senhaBd){
     if(!$senhaDigitada || !$senhaBd){return false;}
     if($senhaDigitada == $senhaBd){return true;}
     return false;
-    }
-    
-    function protegerTela(){
-        if(
+}
+
+function protegerTela(){
+    if(
             !$_SESSION || 
             !$_SESSION["usuario"]["status"] === 'logado'
             ){
@@ -229,12 +230,24 @@ function validaSenha($senhaDigitada, $senhaBd){
             header('Location:'.constant("URL_LOCAL_SITE_PAGINA_LOGIN"));
         }
         
-        function NoticiasInd($id)
+        function buscarNoticiaPorId($id)
         {
-            $pdo = Database::conexao();
-            $sql = "SELECT * FROM noticias_tb WHERE `id` = '$id'";
-            $stmt = $pdo->prepare($sql);
-            $list = $stmt->execute();
-            $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $list;
-        }
+             if(!$id){return;}
+             $sql = "SELECT * FROM noticias_tb WHERE `id` = :id";
+             $pdo = Database::conexao();
+             $stmt = $pdo->prepare($sql);
+             $stmt->bindParam(':id', $id);
+             $result = $stmt->execute();
+             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+             return $result[0];
+            }
+            
+            function Sugestoes($categoria,$titulo)
+            {
+                $pdo = Database::conexao();
+                $sql = "SELECT * FROM noticias_tb WHERE `titulo` != '$titulo' AND categoria LIKE '%$categoria%' LIMIT 4";
+                $stmt = $pdo->prepare($sql);
+                $list = $stmt->execute();
+                $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return $list;
+            }

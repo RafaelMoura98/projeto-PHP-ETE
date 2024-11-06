@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/temaescuro.css">
-  <link rel="stylesheet" href="css/index.css">
   
-    <?php if($paginaUrl === "contato"):?>
+    <?php if($paginaUrl === "principal"):?>
+        <link rel="stylesheet" href="css/index.css">   
+    <?php endif; ?>
+        <?php if($paginaUrl === "contato"):?>
         <link rel="stylesheet" href="css/contato.css">
         <link rel="stylesheet" href="css/validacao-contato.css">
     <?php endif; ?>
@@ -24,8 +26,8 @@
     <?php if($paginaUrl === "login"):?>
         <link rel="stylesheet" href="css/login.css">
     <?php endif; ?>
-    <?php if($paginaUrl === "esporte"):?>
-        <link rel="stylesheet" href="css/paginas.css">
+    <?php if($paginaUrl === "detalhe"):?>
+        <link rel="stylesheet" href="css/detalhe.css">
     <?php endif; ?>
 
   <script src="scripts/header.js" defer></script>

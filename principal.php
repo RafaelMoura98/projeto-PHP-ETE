@@ -24,14 +24,14 @@
     <section class="gridContainer">
       <div class="mainContent">
         <?php 
-        $noticia = listarNoticias();
-        foreach($noticia as $n):
+        $listaNoticia = listarNoticias();
+        foreach($listaNoticia as $noticia):
           ?>
-        <a class="pag-link" href="<?=constant('URL_LOCAL_SITE_PAGINA').'principal&esporte='.$n['id']?>">
-          <img src="<?=$n['imagem']?>" alt="mainCardImg" class="mainCardImg" width=320px height=180px>
+        <a class="pag-link" href="<?=constant('URL_LOCAL_SITE_DETALHE').$noticia['id']?>">
           <div class="categoryCard">
-            <p class="mainCategoryCardTitle"><?=$n['titulo']?></p>
-            <p class="mainCategoryCardDescription"><?= reduzirStr($n['descricao'],180)?></p>
+            <img src="<?=$noticia['imagem']?>" alt="mainCardImg" class="mainCardImg" width=320px height=180px>
+            <p class="mainCategoryCardTitle"><?=$noticia['titulo']?></p>
+            <p class="mainCategoryCardDescription"><?= reduzirStr($noticia['descricao'],180)?></p>
           </div>
       
         </a>
@@ -61,7 +61,7 @@
     </section>
 
     <footer class="footer">
-      <span>Info Sports</span>
+      <span class="logodown">InfoSports</span>
       <a href="#backToTop" class="footerAnchor">VOLTAR PARA O TOPO</a>
     </footer>
   </div>

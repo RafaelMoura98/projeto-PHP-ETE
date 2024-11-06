@@ -17,12 +17,17 @@
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding-top: 20px;
+    background-color:#292929;
+    color: #F6ECEA; 
 }
 
 .sectionDescription {
     text-align: center;
-    color: #383838;
+    color: #F6ECEA;
+    background-color: #292929;
 }
+
+
 
 .gridContainer {
     display: grid;
@@ -58,7 +63,10 @@
 }
 
 .categoryCard:hover {
-    border-color: #86a0cc;
+    border-color: #D24615;
+    background-color: #AF431C;
+    color:#FCFCFC;
+    transform: scaleY(1.02);
 }
 
 .pag-link {
@@ -76,8 +84,8 @@
 }
 
 .sidebarContent {
-    background-color: #d5d9e7;
-    color: black;
+    background: linear-gradient(to left,#D24615,#993b19);
+    color: #FCFCFC;
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -89,7 +97,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 30px;
-    border: 2px solid #6679bd;
+    border: 2px solid D24615;
     border-radius: 15px;
     flex-wrap: wrap;
 }
@@ -99,7 +107,6 @@
     flex-direction: column;
     row-gap: 20px;
     padding-bottom: 20px;
-    background-color: #d5d9e7;
     flex-wrap: wrap;
 }
 
@@ -116,10 +123,12 @@
     border-radius: 10px;
 }
 
+
 .sidebarCardTitle {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    padding: 10px;
+    padding: 18px;
+    font-size: 1.5em;
 }
 
 .sidebarCard:hover {
@@ -128,27 +137,31 @@
 
 
 .btnCalcular {
-    background-color: #5167b2;
+    background-color: #292929;
     width: 72%;
     padding: 10px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 8px;
     border: none;
-    color: white;
+    color: #FCFCFC;
     font-size: 20px;
+    margin: 50px 60px 50px;
+
 }
 
 .btnCalcular:hover {
-    background-color: #86a0cc;
+    transform: scaleY(1.07);
+    background:#050505;
+    transition: 0.6s ease-in-out;
 }
 
 input {
     width: 100%;
     height: 40px;
-    box-shadow: 2px 2px 2px rgb(196, 196, 196);
+    box-shadow: 5.2px 5.2px 5.2px #993b19;
     border: none;
     border-radius: 5px;
-    background-color: #bed4f9;
+    background-color: #FCFCFC;
     padding: 6px;
 }
 
@@ -171,5 +184,5 @@ input {
 @media (max-width: 370px) {
     .sidebarContent {
         padding: 1px;
-    }
+    }-
 }

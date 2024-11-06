@@ -38,12 +38,17 @@ $descricao = ($_SERVER["REQUEST_METHOD"] == "POST"
 
 $imagem = ($_SERVER["REQUEST_METHOD"] == "POST"
 && !empty($_POST['imagem'])) ? $_POST['imagem'] : null;
+
+$categoria = ($_SERVER["REQUEST_METHOD"] == "POST"
+&& !empty($_POST['categoria'])) ? $_POST['categoria'] : null;
+
+
+
 $resposta = 0;
 
  $resposta = calcularImc($peso, $altura);
  $classificacao = classificarImc($resposta);
- 
-//  var_dump($resposta); 
+ $noticia = null;
  timeZone();
   $data = dataAtual();
   $tituloDoSite = "BEM VINDO A INFOSPORTS!";
@@ -56,12 +61,7 @@ if($_GET && isset($_GET['pagina'])){
   $paginaUrl = null;
 }
 
-if($_GET && isset($_GET['esporte'])){
-    $noticia = $_GET['esporte'];
-  }else{
-    $noticia = null;
-  }
-var_dump($noticia);
+
 if($paginaUrl === "principal"){
   cadastrar($nome,$email,$peso,$altura,$resposta,$classificacao);
 }elseif($paginaUrl === "registro"){
@@ -69,7 +69,7 @@ if($paginaUrl === "principal"){
 }elseif($paginaUrl === "contato"){
   cadastrarContato($nome,$sobrenome,$email,$telefone,$mensagem);
 }elseif($paginaUrl === "cadastrar-noticia"){
-  cadastrarNoticia($titulo,$imagem,$descricao);
+  cadastrarNoticia($titulo,$imagem,$descricao,$categoria);
 }elseif($paginaUrl === "login"){
   $usuarioCadastrado = verificarLogin($login);
   if(
@@ -80,6 +80,13 @@ if($paginaUrl === "principal"){
   }
 }elseif($paginaUrl === "sair"){
   limparSessao();
+}elseif($paginaUrl === "detalhe"){
+  if($_GET && isset($_GET['id'])){
+    $idNoticia = $_GET['id'];
+  }else{
+    $idNoticia = 0;
+  }
+    $noticia = buscarNoticiaPorId($idNoticia);
 }
 
 include_once("header.php");
@@ -88,8 +95,6 @@ include_once("header.php");
   }elseif($paginaUrl === "contato"){
     protegerTela();
     include_once("contato.php");
-  }elseif($paginaUrl === "principal&esporte=".$n['id']){
-    include_once("esporte.php");
   }elseif($paginaUrl === "login"){
     include_once("login.php");
   }elseif($paginaUrl === "registro"){
@@ -97,9 +102,10 @@ include_once("header.php");
   }elseif($paginaUrl === "cadastrar-noticia"){
     protegerTela();
     include_once("noticia.php");
+  }elseif($paginaUrl === "detalhe"){
+    include_once("detalhe.php");
   }else{
     echo "404 Página não existe!";
   }
-var_dump($paginaUrl);
 include_once("footer.php");
 ?>

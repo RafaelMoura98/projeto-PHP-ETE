@@ -38,6 +38,9 @@
                         <div class="input-box">
                             <input type="text" id="imagem" name="imagem" placeholder="Imagem">
                         </div>
+                        <div class="input-box">
+                            <input type="text" id="categoria" name="categoria" placeholder="Categoria">
+                        </div>
                         
                         <div class="input-box">
                             <textarea id="mensagem" name="descricao" placeholder="Digite a descrição"></textarea>
