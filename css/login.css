@@ -3,11 +3,21 @@
   padding: 0;
 }
 
-body {
+/* body {
   background-color: rgb(221, 228, 245);
+} */
+
+span{
+  text-decoration: none;
+  color: #292929;
+  font-size: 30px;
+  cursor: pointer;
 }
 
+
 section {
+  background-image: url(sports-tools.jpg);
+  opacity: 0.9;
   padding: 70px;
   display: flex;
   justify-content: center;
@@ -16,7 +26,6 @@ section {
 .container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
 }
 
 .main {
@@ -32,7 +41,6 @@ section {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #ffff;
   width: 100%;
   height: 600px;
   border-radius: 8px;
@@ -40,19 +48,24 @@ section {
   flex-wrap: wrap;
 }
 
+h1{
+  color:#FCFCFC;  
+}
 form {
   width: 40%;
+  background: linear-gradient(to left ,#D24615,#993b19);
+  opacity: 0.98;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  align-items: center;
+  margin: auto;
   flex-wrap: wrap;
   border-radius: 25px;
   border-style: solid;
   border-width: 1px;
-  border-color: #6679bd;
-  padding: 40px;
+  border-color: #D24615;
+  padding: 25px;
   height: 500px;
 }
 
@@ -69,26 +82,29 @@ form {
 input {
   width: 100%;
   height: 40px;
-  box-shadow: 2px 2px 2px rgb(196, 196, 196);
+  box-shadow: 5.2px 5.2px 5.2px #993b19;
   border: none;
   border-radius: 5px;
-  background-color: #bed4f9;
+  background-color: #FCFCFC;
+  color:#292929;
 }
 
 
 .btn-concluir {
-  background-color: #5167b2;
+  background-color: #292929;
   width: 72%;
   padding: 10px;
   cursor: pointer;
   border-radius: 10px;
   border: none;
-  color: white;
-  font-size: 20px;
+  color: #FCFCFC;
+  font-size: 22px;
 }
 
 .btn-concluir:hover {
-  background-color: #86a0cc;
+  transform: scaleZ(1.8);
+  background:#050505;
+  transition: 0.7s ease-in-out;
 }
 
 input[type="text"],

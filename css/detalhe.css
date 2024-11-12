@@ -1,15 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.sectionTitle{
+.sectionTitle {
     font-size: 26px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 20px;
+    background-color: #292929;
+    color: #F6ECEA; 
 }
 
-.sectionDescription{
+span{
+  text-decoration: none;
+  color: #292929;
+  font-size: 30px;
+  cursor: pointer;
+
+}
+.sectionDescription {
     text-align: center;
-    color: #383838;
+    color: #F6ECEA;
+    background-color: #292929;
+    padding-bottom: 12px;
 }
 
 .mainContent{
@@ -54,10 +65,14 @@
     border-radius: 10px;
     transition: 0.5s;
     cursor: pointer;
+    margin-bottom: 14px ;
 }
 
 .card:hover {
-    border-color: #86a0cc;
+    border-color: #D24615;
+    background-color: #AF431C;
+    color:#FCFCFC;
+    transform: scaleY(1.02);
 }
 
 .cardimg{

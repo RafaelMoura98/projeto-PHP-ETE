@@ -201,7 +201,7 @@ function verificarLogin($login){
     $stmt = $pdo->prepare($sql);
     $list = $stmt->execute();
     $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $list[0];
+    return $list;
 }
 
 function validaSenha($senhaDigitada, $senhaBd){
