@@ -30,8 +30,7 @@ section {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #ffff;
-  width: 100%;
+  width: 95%;
   height: 600px;
   border-radius: 8px;
   gap: 30px;

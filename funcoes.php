@@ -181,7 +181,7 @@ function reduzirStr($str,$quantidade){
     function cadastrarNoticia($titulo,$imagem,$descricao,$categoria)
     {
         if(!$titulo ||!$imagem || !$descricao || !$categoria){return;}
-        $sql = "INSERT INTO `noticias_tb` (`titulo`,`imagem`,`descricao`,`categoria`)
+        $sql = "INSERT INTO `noticias_tb` (`titulo`,`imagem`,`descricao`,`id_categoria`)
         VALUES(:titulo,:imagem,:descricao,:categoria)";
 
 $pdo = Database::conexao();
@@ -195,13 +195,14 @@ return ($result)?true:false;
 }
 
 function verificarLogin($login){
+    if(!$login){return;}
     $pdo = Database::conexao();
     $sql = "SELECT `id`,`nome`,`login`,`senha` FROM registro_tb WHERE `login` = '$login'";
-    // var_dump($sql);die;
     $stmt = $pdo->prepare($sql);
     $list = $stmt->execute();
     $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $list;
+    // var_dump($list);
+    return $list[0];
 }
 
 function validaSenha($senhaDigitada, $senhaBd){
@@ -212,15 +213,15 @@ function validaSenha($senhaDigitada, $senhaBd){
 
 function protegerTela(){
     if(
-            !$_SESSION || 
-            !$_SESSION["usuario"]["status"] === 'logado'
-            ){
-                header('Location:'.constant("URL_LOCAL_SITE_PAGINA_LOGIN"));
-            }
+        !$_SESSION || 
+        !$_SESSION["usuario"]["status"] === 'logado'
+        ){
+            header('Location:'.constant("URL_LOCAL_SITE_PAGINA_LOGIN"));
         }
-        
-        function registrarAcessoValido($usuarioCadastrado){
-            $_SESSION["usuario"]["nome"] = $usuarioCadastrado['nome'];
+    }
+    
+    function registrarAcessoValido($usuarioCadastrado){
+        $_SESSION["usuario"]["nome"] = $usuarioCadastrado['nome'];
             $_SESSION["usuario"]["id"] = $usuarioCadastrado['id'];
             $_SESSION["usuario"]["status"] = 'logado';
         }
@@ -232,20 +233,50 @@ function protegerTela(){
         
         function buscarNoticiaPorId($id)
         {
-             if(!$id){return;}
-             $sql = "SELECT * FROM noticias_tb WHERE `id` = :id";
-             $pdo = Database::conexao();
-             $stmt = $pdo->prepare($sql);
-             $stmt->bindParam(':id', $id);
-             $result = $stmt->execute();
-             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-             return $result[0];
-            }
-            
+            if(!$id){return;}
+            $sql = "SELECT * FROM noticias_tb WHERE `id` = :id";
+            $pdo = Database::conexao();
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':id', $id);
+            $result = $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result[0];
+        }
+        
             function Sugestoes($categoria,$titulo)
             {
                 $pdo = Database::conexao();
                 $sql = "SELECT * FROM noticias_tb WHERE `titulo` != '$titulo' AND categoria LIKE '%$categoria%' LIMIT 4";
+                $stmt = $pdo->prepare($sql);
+                $list = $stmt->execute();
+                $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return $list;
+            }
+            function cadastrarCategoria($nomeCategoria)
+            {
+                if(!$nomeCategoria){return;}
+                $sql = "INSERT INTO `categoria_tb` (`nome`)
+                VALUES(:nome)";
+                $pdo = Database::conexao();
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindParam(':nome', $nomeCategoria);
+                $result = $stmt->execute();
+                return ($result)?true:false;
+            }
+            function verificarCategoriaDuplicada($termo)
+            {
+                $pdo = Database::conexao();
+                $sql = "SELECT * FROM `categoria_tb` WHERE `nome` = '$termo'";
+                $stmt = $pdo->prepare($sql);
+                $list = $stmt->execute();
+                $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return ($list)?true:false;
+            }
+            
+            function listarCategoria()
+            {
+                $pdo = Database::conexao();
+                $sql = "SELECT * FROM categoria_tb";
                 $stmt = $pdo->prepare($sql);
                 $list = $stmt->execute();
                 $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
