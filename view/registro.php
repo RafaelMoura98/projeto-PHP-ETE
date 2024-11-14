@@ -45,7 +45,7 @@
           </div>
           <div class="email">
             <label for="senha"></label>
-            <input type="password" placeholder="senha" id="senha" name="senha">
+            <input type="password" placeholder="Senha" id="senha" name="senha">
             <p id="senha" class="msg-ajuda" style="display:none;">Insira uma senha valida</p>
           </div>
           <button class="btn-concluir">Concluir</button>
@@ -54,7 +54,7 @@
       </div>
     </section>
     <footer class="footer">
-      <span>Info Sports</span>
+      <span>InfoSports</span>
       <a href="#backToTop" class="footerAnchor">VOLTAR PARA O TOPO</a>
     </footer>
   </div>

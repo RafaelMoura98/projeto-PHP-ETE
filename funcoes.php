@@ -246,7 +246,7 @@ function protegerTela(){
             function Sugestoes($categoria,$titulo)
             {
                 $pdo = Database::conexao();
-                $sql = "SELECT * FROM noticias_tb WHERE `titulo` != '$titulo' AND categoria LIKE '%$categoria%' LIMIT 4";
+                $sql = "SELECT * FROM noticias_tb WHERE `titulo` != '$titulo' AND id_categoria LIKE '%$categoria%' LIMIT 4";
                 $stmt = $pdo->prepare($sql);
                 $list = $stmt->execute();
                 $list = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -38,7 +38,7 @@
 </div>    
 <div class="conteiner">
       <?php 
-        $Sugestoes = Sugestoes($noticia['categoria'],$noticia['titulo']); 
+        $Sugestoes = Sugestoes($noticia['id_categoria'],$noticia['titulo']); 
         foreach($Sugestoes as $s):
           ?>
         <a class="link" href="<?=constant('URL_LOCAL_SITE_DETALHE').$s['id']?>">

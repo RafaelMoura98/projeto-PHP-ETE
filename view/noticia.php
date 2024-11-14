@@ -35,9 +35,7 @@
                             </div>
                         </div>
                         
-                        <div class="input-box">
-                            <input type="text" id="imagem" name="imagem" placeholder="Imagem">
-                        </div>
+        
                         <div class="input-box">
                             <select name="categoria" id="categoria">
                                 <?php foreach($listadeCategorias as $categoria):?>
@@ -45,24 +43,22 @@
                                 <?php endforeach;?>
                             </select>
                         </div>
-                        
-                        <div class="input-box">
-                            <textarea id="mensagem" name="descricao" placeholder="Digite a descrição"></textarea>
+                            
+                            <div class="input-box">
+                                <textarea id="mensagem" name="descricao" placeholder="Digite a descrição"></textarea>
+                            </div>
                         </div>
-                    </div>
-
+                        <input type="file" id="imagem" name="imagem" placeholder="Imagem">
+                        
                     <div class="button">
                         <button value="Enviar" class="btn-concluir" id="btnEnviar">Enviar</button>
                     </div>
                 </form>
             </div>
-            <section class="contacts">
-                <h2>Notícias</h2>
-            </section>
         </div>
 
         <footer class="footer">
-            <span>Info Sports</span>
+            <span>InfoSports</span>
             <a href="#backToTop" class="footerAnchor">VOLTAR PARA O TOPO</a>
         </footer>
     </div>

@@ -7,36 +7,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
-header {
-    background: #5167b2;
-}
-
-.headerBtnGroup {
-    display: flex;
-    justify-content: end;
-}
-
 a {
     text-decoration: none;
 }
 
-.navBtn {
-    border-radius: 25px;
-    background-color: #ddd;
-    border: none;
-    color: black;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-.navBtn:hover {
-    background-color: #b8b8b8;
-}
 
 .container-body {
     display: flex;

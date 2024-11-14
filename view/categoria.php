@@ -22,7 +22,7 @@
         <div class="container-body">
             <div class="container">
                 <div class="title">
-                    <h2>Cadastrar nova notícia</h2>
+                    <h2>Cadastrar Categoria</h2>
                 </div>
                 
                 <form method="POST" action="#">
@@ -41,9 +41,6 @@
                     </div>
                 </form>
             </div>
-            <section class="contacts">
-                <h2>Notícias</h2>
-            </section>
         </div>
 
         <footer class="footer">
