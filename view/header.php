@@ -16,14 +16,12 @@
         <link rel="stylesheet" href="css/contato.css">
         <link rel="stylesheet" href="css/validacao-contato.css">
     <?php endif; ?>
-    <?php if($paginaUrl === "cadastrar-noticia" || $paginaUrl === "cadastrar-categoria"):?>
-        <link rel="stylesheet" href="css/contato.css">
-        <link rel="stylesheet" href="css/validacao-contato.css">
+    <?php if($paginaUrl === "cadastrar-noticia"):?>
+        <link rel="stylesheet" href="css/noticia.css">
     <?php endif; ?>
-    <!-- <?php if($paginaUrl === "cadastrar-categoria"):?>
-        <link rel="stylesheet" href="css/contato.css">
-        <link rel="stylesheet" href="css/validacao-contato.css">
-    <?php endif; ?> -->
+    <?php if($paginaUrl === "cadastrar-categoria"):?>
+        <link rel="stylesheet" href="css/categoria.css">
+    <?php endif; ?>
     <?php if($paginaUrl === "registro"):?>
         <link rel="stylesheet" href="css/registro.css">
     <?php endif; ?>

@@ -67,13 +67,10 @@
                     </div>
                 </form>
             </div>
-            <section class="contacts">
-                <h2>Contatos</h2>
-            </section>
         </div>
 
         <footer class="footer">
-            <span>Info Sports</span>
+            <span>InfoSports</span>
             <a href="#backToTop" class="footerAnchor">VOLTAR PARA O TOPO</a>
         </footer>
     </div>

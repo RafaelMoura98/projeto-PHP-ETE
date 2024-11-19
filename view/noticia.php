@@ -30,13 +30,14 @@
                         <div class="input-box">
                             <div class="name">
                                 <label for="titulo"></label>
-                                <input type="text" placeholder="título" id="titulo" name="titulo" >
+                                <input type="text" placeholder="Titulo" id="titulo" name="titulo" >
                                 <p id="nome-ajuda" class="msg-ajuda" style="display:none;">Mín. 3 caracteres</p>
                             </div>
                         </div>
                         
         
                         <div class="input-box">
+                            <label for="categoria">Categorias</label><br>
                             <select name="categoria" id="categoria">
                                 <?php foreach($listadeCategorias as $categoria):?>
                                     <option value=<?=$categoria['id']?>><?=$categoria['nome']?></option>
@@ -48,7 +49,10 @@
                                 <textarea id="mensagem" name="descricao" placeholder="Digite a descrição"></textarea>
                             </div>
                         </div>
-                        <input type="file" id="imagem" name="imagem" placeholder="Imagem">
+                        
+                        <div class="input-box">
+                            <input type="file" id="imagem" name="imagem" placeholder="Imagem">
+                        </div>
                         
                     <div class="button">
                         <button value="Enviar" class="btn-concluir" id="btnEnviar">Enviar</button>

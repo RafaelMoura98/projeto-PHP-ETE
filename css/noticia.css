@@ -54,8 +54,20 @@ span{
 }
 
 .container form .campos {
-    display: grid;
+    display: block;
     flex-wrap: wrap;
+}
+
+#categoria{
+    border-radius: 8px;
+    font-size: large;
+    margin-top:8px;
+    margin-bottom: 8px;
+    width: 35%;
+}
+.input-box label{
+    font-size: 19px;
+    font-style: bolder;
 }
 
 form .campos .input-box {
@@ -77,17 +89,15 @@ form .campos .input-box {
 input[type="text"],
 input[type="telefone"],
 input[type="email"],
-textarea,
-textarea::placeholder,
+input[type="select"],
+input[type="file"],
 input::placeholder {
     font-size: large;
     padding: 10px;
 }
 
 .campos .input-box textarea {
-
-    resize: none;
-    height: 240%;
+    height: 180px;
     width: 100%;
     box-shadow: 5.2px 5.2px 5.2px #993b19;
     border: none;
@@ -138,3 +148,4 @@ form .button button:hover {
     }
 
 }
+

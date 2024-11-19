@@ -110,9 +110,10 @@ input {
 input[type="text"],
 input[type="telefone"],
 input[type="email"],
+input[type="password"],
 input::placeholder {
   font-size: large;
-  padding: 8px;
+  padding: 12px;
 }
 
 @media(max-width: 650px) {
