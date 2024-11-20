@@ -103,7 +103,9 @@ input::placeholder {
     border: none;
     border-radius: 5px;
     background-color: #FCFCFC;
-;
+    font-size: large;
+    padding-left: 14px;
+    padding-top: 8px;
 }
 
 form .button {

@@ -67,6 +67,7 @@ form {
   border-color: #D24615;
   padding: 25px;
   height: 500px;
+  box-shadow: 2.3px 2.3px 2.3px 2.3px #4e1e0d;
 }
 
 .name,

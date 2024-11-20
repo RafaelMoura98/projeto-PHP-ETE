@@ -25,7 +25,7 @@
                     <h2>Cadastrar nova notícia</h2>
                 </div>
                 
-                <form method="POST" action="#">
+                <form method="POST" action="#" enctype="multipart/form-data">
                     <div class="campos">
                         <div class="input-box">
                             <div class="name">
@@ -51,7 +51,7 @@
                         </div>
                         
                         <div class="input-box">
-                            <input type="file" id="imagem" name="imagem" placeholder="Imagem">
+                            <input type="file" id="fileToUpload" name="fileToUpload">
                         </div>
                         
                     <div class="button">
