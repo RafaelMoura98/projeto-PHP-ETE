@@ -50,9 +50,9 @@
                             </div>
                         </div>
                         
-                        <div class="input-box">
-                            <input type="file" id="fileToUpload" name="fileToUpload">
-                        </div>
+                            <div class="input-box">
+                                <input type="file" id="fileToUpload" name="fileToUpload">
+                            </div>
                         
                     <div class="button">
                         <button value="Enviar" class="btn-concluir" id="btnEnviar">Enviar</button>

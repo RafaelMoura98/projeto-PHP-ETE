@@ -57,17 +57,23 @@
     cursor: pointer;
 }
 
-.mainCardImg {
+.mainCardImg{
     width: 100%;
     height: 180px;
     border-radius: 10px;
+    box-shadow: 1.1px 1.1px 1.1px 1.1px #4e1e0d;
 }
 
-.categoryCard:hover {
+.categoryCard:hover{
     border-color: #D24615;
     background-color: #AF431C;
     color:#FCFCFC;
     transform: scaleY(1.02);
+}
+
+.categoryCard:hover .mainCardImg{
+    transition: 0.3s ease-in-out;
+    box-shadow: none;
 }
 
 .pag-link {

@@ -96,6 +96,13 @@ input::placeholder {
     padding: 10px;
 }
 
+input[type="file"]{
+    border-radius: 50px;
+
+}
+
+
+
 .campos .input-box textarea {
     height: 180px;
     width: 100%;
