@@ -25,7 +25,7 @@
 <section class="gridContainer">
     <div class="mainContent">
         <div class="categorycard">
-            <img src= "<?=$noticia['imagem']?>" alt="mainCardImg" class="maincardimg" width=1280px>
+            <img src= "./uploads/<?=$noticia['imagem']?>" alt="mainCardImg" class="maincardimg" width=1280px>
             <h1 class="mainCategoryCardTitle"><?=$noticia['titulo']?></h1>
             <p class="mainCategoryCardDescription" Align="justify"><?=$noticia['descricao']?></p>
         </div>
@@ -35,6 +35,7 @@
 <br>
 <div class="noticia">
 <h3><strong>Noticias Relacionadas:</strong></h3>
+<h4></h4>
 </div>    
 <div class="conteiner">
       <?php 
@@ -43,7 +44,7 @@
           ?>
         <a class="link" href="<?=constant('URL_LOCAL_SITE_DETALHE').$s['id']?>">
           <div class="card">
-            <img src="<?=$s['imagem']?>" alt="CardImg" class="cardimg" width=320px height=180px>
+            <img src="./uploads/<?=$s['imagem']?>" alt="CardImg" class="cardimg" width=320px height=180px>
             <p class="CardTitle"><?=$s['titulo']?></p>
             <p class="CardDescription"><?= reduzirStr($s['descricao'],180)?></p>
           </div>
@@ -51,7 +52,7 @@
         <?php endforeach?>
     </div> 
 <footer class="footer">
-      <span>Info Sports</span>
+      <span>InfoSports</span>
       <a href="#backToTop" class="footerAnchor">VOLTAR PARA O TOPO</a>
     </footer>
   </div>

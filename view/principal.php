@@ -29,7 +29,7 @@
           ?>
         <a class="pag-link" href="<?=constant('URL_LOCAL_SITE_DETALHE').$noticia['id']?>">
           <div class="categoryCard">
-            <img src="<?=$noticia['imagem']?>" alt="mainCardImg" class="mainCardImg" width=320px height=180px>
+            <img src="./uploads/<?=$noticia['imagem']?>" alt="mainCardImg" class="mainCardImg" width=320px height=180px>
             <p class="mainCategoryCardTitle"><?=$noticia['titulo']?></p>
             <p class="mainCategoryCardDescription"><?= reduzirStr($noticia['descricao'],180)?></p>
           </div>

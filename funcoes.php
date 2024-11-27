@@ -108,23 +108,6 @@ function reduzirStr($str,$quantidade){
         return ($result)?true:false;
     }
 
-  function cadastrarRegistro($nome,$email,$telefone,$login,$senha)
-    {
-        if(!$nome || !$email || !$telefone || !$login || !$senha){return;}
-        $sql = "INSERT INTO `registro_tb` (`nome`,`email`,`telefone`,`login`,`senha`)
-        VALUES(:nome,:email,:telefone,:login,:senha)";
-
-        $pdo = Database::conexao();
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':telefone', $telefone);
-        $stmt->bindParam(':login', $login);
-        $stmt->bindParam(':senha', $senha);
-        $result = $stmt->execute();
-        return ($result)?true:false;
-    }
-
     function cadastrarContato($nome,$sobrenome,$email,$telefone,$mensagem)
     {
         // var_dump($nome,$sobrenome,$email,$telefone,$mensagem);die;
@@ -184,26 +167,15 @@ function reduzirStr($str,$quantidade){
         $sql = "INSERT INTO `noticias_tb` (`titulo`,`imagem`,`descricao`,`id_categoria`)
         VALUES(:titulo,:imagem,:descricao,:categoria)";
 
-$pdo = Database::conexao();
-$stmt = $pdo->prepare($sql);
-$stmt->bindParam(':titulo', $titulo);
-$stmt->bindParam(':imagem', $imagem);
-$stmt->bindParam(':descricao', $descricao);
-$stmt->bindParam(':categoria', $categoria);
-$result = $stmt->execute();
-return ($result)?true:false;
-}
-
-function verificarLogin($login){
-    if(!$login){return;}
-    $pdo = Database::conexao();
-    $sql = "SELECT `id`,`nome`,`login`,`senha` FROM registro_tb WHERE `login` = '$login'";
-    $stmt = $pdo->prepare($sql);
-    $list = $stmt->execute();
-    $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // var_dump($list);
-    return $list[0];
-}
+        $pdo = Database::conexao();
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':titulo', $titulo);
+        $stmt->bindParam(':imagem', $imagem);
+        $stmt->bindParam(':descricao', $descricao);
+        $stmt->bindParam(':categoria', $categoria);
+        $result = $stmt->execute();
+        return ($result)?true:false;
+    }
 
 function validaSenha($senhaDigitada, $senhaBd){
     if(!$senhaDigitada || !$senhaBd){return false;}
