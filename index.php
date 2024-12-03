@@ -105,7 +105,7 @@ include_once("view/header.php");
     include_once("view/login.php");
   }elseif($paginaUrl === "registro"){
     include_once("model/registro_model.php");
-    include_once("controller/registro_controller  .php");
+    include_once("controller/registro_controller.php");
   }elseif($paginaUrl === "cadastrar-noticia"){
     protegerTela();
     include_once("view/noticia.php");
